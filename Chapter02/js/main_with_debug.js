@@ -2,6 +2,8 @@
  *  Activity 3 - Cities Table and Debugging 1
  *  Dave Vanosdall 
  ******************************************/
+// In this version of the script they were pretty liberal with the "var" keywords, where 
+// they should have probably used let or const or sonarqube would have complained about it.
 
 // Wait until the webpage is fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
@@ -24,11 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add a row for each city in the cityPop array
     cityPop.forEach(function(city) {
         var row = document.createElement('tr'); 
+		// beforeend just makes sure that is inserted at the end right before the closing tag
         row.insertAdjacentHTML('beforeend', '<td>' + city.city + '</td><td>' + city.population + '</td>'); 
         table.appendChild(row);
     });
 
-    // Attach the table to the div with id "mydiv"
+    // Attach the table to the mydiv div
     document.querySelector('#mydiv').appendChild(table);
 
     // Add the "City Size" column to the table
@@ -40,9 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Adds a "City Size" column to the table.
      * The city size depends on population:
-     * - Small: less than 100,000 people
-     * - Medium: between 100,000 and 500,000
-     * - Large: more than 500,000 people
+     ** Small: less than 100,000 people * Medium: between 100,000 and 500,000 * Large: more than 500,000 people
      * @param {Array} cityPop - The list of cities and populations
      */
     function addColumns(cityPop) {
@@ -70,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /**
      * Adds mouseover and click events to the table:
-     * - Mouseover: Changes the table's background to a random color
-     * - Click: Shows an alert that says the table was clicked
+     ** Mouseover: Changes the table's background to a random color
+     ** Click: Shows an alert that says the table was clicked
      */
     function addEvents() {
         // When the mouse moves over the table, change its background to a random color
