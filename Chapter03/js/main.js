@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Set the table's background color to the random RGB value
-            document.querySelector('table').style.backgroundColor = color;
+            document.querySelector('table').style.color = color;
         });
 
         // Show a pop-up message when the table is clicked
